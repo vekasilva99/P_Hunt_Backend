@@ -47,7 +47,6 @@ const user = async (userId) => {
       ...user._doc,
       _id: user.id,
       password: null,
-      birthdate: new Date(user._doc.birthdate).toISOString(),
       createdAt: new Date(user._doc.createdAt).toISOString(),
       updatedAt: new Date(user._doc.updatedAt).toISOString(),
       products: products.bind(this, user._doc.products),
@@ -75,7 +74,6 @@ module.exports = {
           role: "VOTER",
           name: args.userInput.name,
           lastName: args.userInput.lastName,
-          birthdate: new Date(args.userInput.birthdate).toISOString(),
           mail: args.userInput.mail,
           password: hashedPassword,
         });
@@ -86,7 +84,6 @@ module.exports = {
           role: "FOUNDER",
           name: args.userInput.name,
           lastName: args.userInput.lastName,
-          birthdate: new Date(args.userInput.birthdate).toISOString(),
           mail: args.userInput.mail,
           password: hashedPassword,
         });
@@ -96,7 +93,6 @@ module.exports = {
           role: "ADMIN",
           name: args.userInput.name,
           lastName: args.userInput.lastName,
-          birthdate: new Date(args.userInput.birthdate).toISOString(),
           mail: args.userInput.mail,
           password: hashedPassword,
         });
@@ -114,7 +110,6 @@ module.exports = {
       const user = await User.findById(args.updateInput.id);
       user.name = args.updateInput.name;
       user.lastName = args.updateInput.lastName;
-      user.birthdate = new Date(args.updateInput.birthdate).toISOString();
       const result = await user.save();
       console.log(result);
       return { ...result._doc, _id: user.id };
@@ -138,7 +133,6 @@ module.exports = {
     const loggedUser = {
       ...user._doc,
       password: null,
-      birthdate: new Date(user._doc.birthdate).toISOString(),
       createdAt: new Date(user._doc.createdAt).toISOString(),
       updatedAt: new Date(user._doc.updatedAt).toISOString(),
       products: products.bind(this, user._doc.products),

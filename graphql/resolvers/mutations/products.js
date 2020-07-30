@@ -25,7 +25,6 @@ const user = async (userId) => {
       ...user._doc,
       _id: user.id,
       password: null,
-      birthdate: new Date(user._doc.birthdate).toISOString(),
       createdAt: new Date(user._doc.createdAt).toISOString(),
       updatedAt: new Date(user._doc.updatedAt).toISOString(),
     };

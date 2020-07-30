@@ -5,7 +5,6 @@ module.exports = gql`
     _id: ID!
     name: String
     lastName: String
-    birthdate: String
     mail: String!
     password: String
     role: String!
@@ -25,7 +24,6 @@ module.exports = gql`
     mail: String
     name: String!
     lastName: String!
-    birthdate: String!
   }
 
   input UserInput {
@@ -34,7 +32,6 @@ module.exports = gql`
     password: String!
     name: String!
     lastName: String!
-    birthdate: String!
   }
 
   type Product {

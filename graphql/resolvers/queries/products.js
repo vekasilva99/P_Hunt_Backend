@@ -24,7 +24,6 @@ const user = async (userId) => {
     return {
       ...user._doc,
       _id: user.id,
-      birthdate: new Date(user._doc.birthdate).toISOString(),
       createdAt: new Date(user._doc.createdAt).toISOString(),
       updatedAt: new Date(user._doc.updatedAt).toISOString(),
       products: products.bind(this, user._doc.products),

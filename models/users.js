@@ -24,10 +24,6 @@ const userSchema = new Schema(
       type: String,
       require: true,
     },
-    birthdate: {
-      type: Date,
-      require: true,
-    },
     products: [
       {
         type: Schema.Types.ObjectId,
