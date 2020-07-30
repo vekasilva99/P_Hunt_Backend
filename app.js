@@ -25,7 +25,6 @@ const serverGraphQL = new ApolloServer({
 serverGraphQL.applyMiddleware({ app, cors: false });
 
 const httpServer = createServer(app);
-serverGraphQL.installSubscriptionHandlers(httpServer);
 
 mongoose
   .connect(
