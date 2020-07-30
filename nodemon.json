@@ -1,0 +1,7 @@
+{
+  "env": {
+    "MONGO_DB": "p_hunt",
+    "MONGO_PASSWORD": "211ce496",
+    "MONGO_USER": "vekasilva99"
+  }
+}
