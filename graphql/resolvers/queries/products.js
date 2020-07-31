@@ -34,6 +34,18 @@ const user = async (userId) => {
 };
 
 module.exports = {
+  productsOrdered: async (_, args, context) => {
+    return Product.find()
+      .sort({ createdAt: -1 })
+      .then((products) => {
+        return products.map((product) => {
+          return { ...product._doc };
+        });
+      })
+      .catch((err) => {
+        throw err;
+      });
+  },
   allProducts: async (_, args, context) => {
     // if (!context.token) throw new Error("No authorized");
     try {
