@@ -19,7 +19,7 @@ const serverGraphQL = new ApolloServer({
   typeDefs,
   resolvers,
   playground: !!(process.env.NODE_ENV !== "production"),
-  context: ({ req }) => ({}),
+  context: isAuth,
 });
 //Apply server graphql in express
 serverGraphQL.applyMiddleware({ app, cors: false });
