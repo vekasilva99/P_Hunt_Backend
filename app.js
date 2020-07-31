@@ -9,7 +9,7 @@ const isAuth = require("./middleware/auth");
 const cors = require("cors");
 
 const app = express();
-
+app.use(cors());
 app.use(bodyParser.json());
 
 //BodyParser is needed just for POST.
