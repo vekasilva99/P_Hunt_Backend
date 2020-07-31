@@ -36,14 +36,15 @@ const user = async (userId) => {
 module.exports = {
   createProduct: async (_, args) => {
     try {
-      const theuser = await User.findById(args.orderInput.user);
+      const theuser = await User.findById(args.productInput.user);
 
       const product = new Product({
-        user: args.orderInput.user,
-        name: args.orderInput.name,
-        description: args.orderInput.description,
-        logo: args.orderInput.logo,
-        link: args.orderInput.deliverLat,
+        user: args.productInput.user,
+        name: args.productInput.name,
+        description: args.productInput.description,
+        logo: args.productInput.logo,
+        link: args.productInput.link,
+        images: args.productInput.images,
       });
 
       let createdProduct;
