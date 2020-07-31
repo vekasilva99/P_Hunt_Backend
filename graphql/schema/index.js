@@ -61,6 +61,7 @@ module.exports = gql`
     allProducts: [Product!]!
     userLogin(mail: String!, password: String!, role: String!): AuthUser!
     currentUser: User
+    productsOrdered: [Product!]!
   }
 
   type Mutation {
