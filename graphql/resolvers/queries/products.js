@@ -41,8 +41,8 @@ module.exports = {
         return products.map((product) => {
           return {
             ...product._doc,
-            createdAt: new Date(user._doc.createdAt).toISOString(),
-            updatedAt: new Date(user._doc.updatedAt).toISOString(),
+            createdAt: new Date(product._doc.createdAt).toISOString(),
+            updatedAt: new Date(product._doc.updatedAt).toISOString(),
           };
         });
       })
