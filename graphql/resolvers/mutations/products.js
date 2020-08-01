@@ -70,7 +70,7 @@ module.exports = {
       if (!context.token) {
         throw new Error("No authorized");
       }
-      const product = await Product.findById(args.productInput._id);
+      const product = await Product.findById(args.id);
       const voter = await User.findById(context.token.userId);
 
       product.votes = product.votes + 1;
