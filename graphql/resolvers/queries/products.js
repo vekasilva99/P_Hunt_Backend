@@ -43,6 +43,7 @@ module.exports = {
             ...product._doc,
             createdAt: new Date(product._doc.createdAt).toISOString(),
             updatedAt: new Date(product._doc.updatedAt).toISOString(),
+            user: user.bind(this, product._doc.user),
           };
         });
       })
