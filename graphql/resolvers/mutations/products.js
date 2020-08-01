@@ -65,4 +65,22 @@ module.exports = {
       throw err;
     }
   },
+  addVote: async (_, args, context) => {
+    try {
+      if (!context.token) {
+        throw new Error("No authorized");
+      }
+      const product = await Product.findById(args.productInput._id);
+      const voter = await User.findById(context.token.userId);
+
+      product.votes = product.votes + 1;
+      const save = await product.save();
+      voter.products.push(product);
+      await voter.save();
+
+      return save;
+    } catch (err) {
+      throw err;
+    }
+  },
 };
