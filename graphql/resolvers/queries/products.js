@@ -39,7 +39,11 @@ module.exports = {
       .sort({ createdAt: -1 })
       .then((products) => {
         return products.map((product) => {
-          return { ...product._doc };
+          return {
+            ...product._doc,
+            createdAt: new Date(user._doc.createdAt).toISOString(),
+            updatedAt: new Date(user._doc.updatedAt).toISOString(),
+          };
         });
       })
       .catch((err) => {
