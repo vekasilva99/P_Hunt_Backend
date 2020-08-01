@@ -69,5 +69,6 @@ module.exports = gql`
     updateUser(updateInput: UpdateUserInput): User
     userLogin(mail: String!, password: String!, role: String!): AuthUser!
     createProduct(productInput: ProductInput): Product
+    addVote: Product
   }
 `;
