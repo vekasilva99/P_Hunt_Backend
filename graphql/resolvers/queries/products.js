@@ -3,9 +3,7 @@ const User = require("../../../models/users");
 
 const products = async (productsIds) => {
   try {
-    const products = await Product.find({ _id: { $in: productsIds } }).sort({
-      createdAt: -1,
-    });
+    const products = await Product.find({ _id: { $in: productsIds } });
     return products.map((product) => {
       return {
         ...product._doc,
