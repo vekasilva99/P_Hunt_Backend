@@ -38,7 +38,7 @@ const user = async (userId) => {
 module.exports = {
   productsOrdered: async (_, args, context) => {
     return Product.find()
-      .sort({ createdAt: -1, votes: -1 })
+      .sort({ createdAt: -1, votes: "descending" })
       .then((products) => {
         return products.map((product) => {
           return {
