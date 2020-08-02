@@ -38,7 +38,7 @@ module.exports = {
     return Product.find()
       .sort([
         ["createdAt", -1],
-        ["votes", -1],
+        ["votes", 1],
       ])
       .then((products) => {
         return products.map((product) => {

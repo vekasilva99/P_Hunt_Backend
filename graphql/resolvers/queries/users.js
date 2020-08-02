@@ -22,7 +22,7 @@ const products = async (productsIds) => {
 
 const product = async (productId) => {
   try {
-    const product = await Product.findById(productId);
+    const product = await Product.findById(productId).sort({ createdAt: -1 });
     if (product) {
       return {
         ...product._doc,
