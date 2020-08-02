@@ -111,7 +111,9 @@ module.exports = {
         password: null,
         createdAt: new Date(user._doc.createdAt).toISOString(),
         updatedAt: new Date(user._doc.updatedAt).toISOString(),
-        products: products.bind(this, user._doc.products),
+        products: products
+          .bind(this, user._doc.products)
+          .sort({ createdAt: -1 }),
       };
     } catch (err) {
       throw err;
